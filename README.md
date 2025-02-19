@@ -80,9 +80,9 @@ VALUES
    ```
 
 3. Iniciar el servidor:
-   ```sh
-   npm run start
-   ```
+```sh
+npm run start
+```
 
 2. Verifica que el servidor esté corriendo en `http://localhost:3000`
 
@@ -91,3 +91,9 @@ VALUES
 ## Otras configuraciones
 
 Para configurar variables de entorno que no sean las por defecto ir al archivo environments/environment.ts
+
+Para ejecutar pruebas:
+Iniciar el servidor:
+```sh
+npm test 
+```
