@@ -40,7 +40,7 @@ docker exec -it task_management_db psql -U admin -d task_management
 ```
 Ejecuta la siguiente consulta SQL para crear la tabla:
 ```sql
-CREATE TABLE tasks (
+CREATE TABLE Tasks (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT,
@@ -55,12 +55,13 @@ CREATE TABLE tasks (
 ### 3. Insertar Datos Dummy
 Ejecuta el siguiente script en PostgreSQL:
 ```sql
-INSERT INTO tasks (title, description, completed, tags, due_date) VALUES
-('Comprar comida', 'Ir al supermercado y comprar frutas', false, ARRAY['compras', 'supermercado'], '2024-12-01'),
-('Terminar proyecto', 'Finalizar la prueba técnica de NestJS', true, ARRAY['trabajo', 'proyecto'], '2024-12-05'),
-('Hacer ejercicio', 'Salir a correr por 30 minutos', false, ARRAY['salud', 'ejercicio'], '2024-12-02'),
-('Leer un libro', 'Leer 20 páginas del libro de programación', false, ARRAY['lectura', 'aprendizaje'], '2024-12-03'),
-('Actualizar CV', 'Revisar y actualizar información', false, ARRAY['trabajo', 'cv'], '2024-12-04');
+INSERT INTO "Tasks" ("title", "description", "completed", "tags", "dueDate", "createdAt", "updatedAt")
+VALUES
+('Comprar comida', 'Ir al supermercado y comprar frutas', false, '["compras", "supermercado"]', '2024-12-01', '2024-02-19 10:00:00', '2024-02-19 10:00:00'),
+('Terminar proyecto', 'Finalizar la prueba técnica de NestJS', true, '["trabajo", "proyecto"]', '2024-12-05', '2024-02-19 10:10:00', '2024-02-19 10:10:00'),
+('Hacer ejercicio', 'Salir a correr por 30 minutos', false, '["salud", "ejercicio"]', '2024-12-02', '2024-02-19 10:20:00', '2024-02-19 10:20:00'),
+('Leer un libro', 'Leer 20 páginas del libro de programación', false, '["lectura", "aprendizaje"]', '2024-12-03', '2024-02-19 10:30:00', '2024-02-19 10:30:00'),
+('Actualizar CV', 'Revisar y actualizar información', false, '["trabajo", "cv"]', '2024-12-04', '2024-02-19 10:40:00', '2024-02-19 10:40:00');
 ```
 
 ---

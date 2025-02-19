@@ -1,5 +1,6 @@
 import { Column, Model, Table, DataType } from 'sequelize-typescript';
 @Table({
+  tableName: 'Tasks',
   timestamps: true,
   defaultScope: {
     attributes: { exclude: ['dataValues', '_previousDataValues', '_changed', '_options', 'isNewRecord'] }, // Excluir las propiedades internas de Sequelize
