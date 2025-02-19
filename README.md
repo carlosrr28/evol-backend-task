@@ -88,3 +88,6 @@ VALUES
 
 ---
 
+## Otras configuraciones
+
+Para configurar variables de entorno que no sean las por defecto ir al archivo environments/environment.ts
