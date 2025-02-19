@@ -1,8 +1,9 @@
-// src/task/task.model.ts
 import { Column, Model, Table, DataType } from 'sequelize-typescript';
-
 @Table({
-  timestamps: true,  // Esto asegura que Sequelize maneje 'createdAt' y 'updatedAt' automáticamente
+  timestamps: true,
+  defaultScope: {
+    attributes: { exclude: ['dataValues', '_previousDataValues', '_changed', '_options', 'isNewRecord'] }, // Excluir las propiedades internas de Sequelize
+  },
 })
 export class Task extends Model<Task> {
   @Column({
@@ -11,7 +12,6 @@ export class Task extends Model<Task> {
     primaryKey: true,
   })
   id: number;
-  
 
   @Column
   title: string;
@@ -25,7 +25,7 @@ export class Task extends Model<Task> {
   })
   completed: boolean;
 
-  @Column(DataType.JSONB)  // Para manejar un array de tags
+  @Column(DataType.JSONB)
   tags: string[];
 
   @Column
